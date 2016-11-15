@@ -108,7 +108,7 @@ angular.module('ui.calendar', [])
                 var self;
 
                 var getTokens = function () {
-                    return ((angular.isFunction(arraySource) ? arraySource() : arraySource) || []).reduce(
+                    return ((angular.isFunction(arraySource) ? arraySource() : $scope.eventSources) || []).reduce(
                         function (rslt, el) {
                             var token = tokenFn(el);
                             map[token] = el;
